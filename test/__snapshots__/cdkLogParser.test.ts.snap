@@ -51,7 +51,7 @@ There were no differences
 "
 `;
 
-exports[`getParsedStacks should remove all non-sense changes from a serivce instance diff log 1`] = `
+exports[`getParsedStacks should remove all non-sense changes from a service instance diff log 1`] = `
 "Stack InboxServicePipeline/Qa-GitHubActions-Permissions/InboxServiceCdkGithubActions (Qa-GitHubActions-Permissions-InboxServiceCdkGithubActions)
 There were no differences
 
