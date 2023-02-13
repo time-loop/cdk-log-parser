@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getParsedStacks should remove all non-sense changes from a infra diff log 1`] = `
+"Stack InboxPipeline/Qa-GitHubActions-Permissions/InboxCdkGithubActions (Qa-GitHubActions-Permissions-InboxCdkGithubActions)
+There were no differences
+
+Stack InboxPipeline/Qa-Permissions/InboxPermissions (Qa-Permissions-InboxPermissions)
+IAM Statement Changes
+┌───┬────────────────────────────────────────────────────────────────────────────┬────────┬─────────────────────────┬────────────────────────────────────────────────────────────────────────────┬───────────┐
+│   │ Resource                                                                   │ Effect │ Action                  │ Principal                                                                  │ Condition │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ \${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa.Arn} │ Allow  │ sts:AssumeRole          │ AWS:arn:\${AWS::Partition}:iam::***:user/StrongDM                  │           │
+│   │                                                                            │        │                         │ Service:ec2.amazonaws.com                                                  │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ *                                                                          │ Allow  │ dynamodb:List*          │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+│   │                                                                            │        │ sqs:List*               │                                                                            │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ arn:aws:cloudformation:*:***:stack/*Inbox*                        │ Allow  │ cloudformation:*        │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ arn:aws:ssm:*:***:parameter/*                                     │ Allow  │ ssm:GetParameter        │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+│   │                                                                            │        │ ssm:GetParameters       │                                                                            │           │
+│   │                                                                            │        │ ssm:GetParametersByPath │                                                                            │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ arn:aws:ssm:*:***:parameter/Inbox*                                │ Allow  │ ssm:*                   │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+└───┴────────────────────────────────────────────────────────────────────────────┴────────┴─────────────────────────┴────────────────────────────────────────────────────────────────────────────┴───────────┘
+(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+Resources
+[+] AWS::IAM::Role Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa inboxpermissionsdeveloperroleqaD6B4997D 
+[+] AWS::IAM::Policy Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa/DefaultPolicy inboxpermissionsdeveloperroleqaDefaultPolicy7153A66A 
+
+
+
+Stack InboxPipeline/UsQaIv1/InboxNotificationsDb (UsQaIv1-InboxNotificationsDb)
+There were no differences
+
+Stack InboxPipeline/UsQaIv1/InboxNotificationsQueue (UsQaIv1-InboxNotificationsQueue)
+There were no differences
+
+Stack InboxPipeline/UsQaQaUsEast21/InboxNotificationsDb (UsQaQaUsEast21-InboxNotificationsDb)
+There were no differences
+
+Stack InboxPipeline/UsQaQaUsEast21/InboxNotificationsQueue (UsQaQaUsEast21-InboxNotificationsQueue)
+There were no differences
+
+Stack InboxPipeline/UsQaQaUsWest26/InboxNotificationsDb (UsQaQaUsWest26-InboxNotificationsDb)
+There were no differences
+
+Stack InboxPipeline/UsQaQaUsWest26/InboxNotificationsQueue (UsQaQaUsWest26-InboxNotificationsQueue)
+There were no differences
+"
+`;
+
+exports[`getParsedStacks should remove all non-sense changes from a serivce instance diff log 1`] = `
+"Stack InboxServicePipeline/Qa-GitHubActions-Permissions/InboxServiceCdkGithubActions (Qa-GitHubActions-Permissions-InboxServiceCdkGithubActions)
+There were no differences
+
+Stack InboxServicePipeline/UsQaInboxServiceDeployHook/DeployHookUsQaMonorepoGitRefInboxServiceMaster (UsQaInboxServiceDeployHook-DeployHookUsQaMonorepoGitRefInboxServiceMaster)
+There were no differences
+
+Stack InboxServicePipeline/UsQaInboxServiceDeployHook/UsQaInboxServiceDeployHookDeployUserPermissions (UsQaInboxServiceDeployHook-UsQaInboxServiceDeployHookDeployUserPermissions)
+There were no differences
+
+Stack InboxServicePipeline/UsQaQaUsEast21/InboxServiceInstance (UsQaQaUsEast21-InboxServiceInstance)
+There were no differences
+
+Stack InboxServicePipeline/UsQaQaUsWest26/InboxServiceInstance (UsQaQaUsWest26-InboxServiceInstance)
+There were no differences
+
+Stack InboxServicePipeline/UsQaUsWest2/InboxServiceInstance (UsQaUsWest2-InboxServiceInstance)
+There were no differences
+"
+`;
