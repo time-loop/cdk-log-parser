@@ -12,6 +12,13 @@ const STACK_REMOVAL_REGEX: [RegExp, string][] = [
   [new RegExp('.*\\[~] .?Metadata:?[\\s\\S]*?└─ \\[\\+].*?(\\n\\s|$)', 'gm'), ' '],
   [new RegExp('^|.*\\n.*├─ \\[~] \\.Metadata:(\\n.*){3}\\n\\s', 'gm'), ''],
   [new RegExp('^(.*)(\\w{64})(\\.zip)\n', 'gm'), ''],
+  [
+    new RegExp(
+      '\\[~] Custom::AWS.*\\n.*Create.*\\n.*getParameter.*\\n.*getParameter.*\\n.*Update.*\\n.*getParameter.*\\n.*getParameter.*',
+      'gm',
+    ),
+    '',
+  ],
 ];
 
 function cleanCDKDiffLog(cdkLog: string) {
