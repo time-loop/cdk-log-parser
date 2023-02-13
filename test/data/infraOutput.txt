@@ -1,0 +1,103 @@
+Stack InboxPipeline/Qa-GitHubActions-Permissions/InboxCdkGithubActions (Qa-GitHubActions-Permissions-InboxCdkGithubActions)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-1', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-1', but are for the right account. Proceeding anyway.
+There were no differences
+Stack InboxPipeline/Qa-Permissions/InboxPermissions (Qa-Permissions-InboxPermissions)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-1', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-1', but are for the right account. Proceeding anyway.
+IAM Statement Changes
+┌───┬────────────────────────────────────────────────────────────────────────────┬────────┬─────────────────────────┬────────────────────────────────────────────────────────────────────────────┬───────────┐
+│   │ Resource                                                                   │ Effect │ Action                  │ Principal                                                                  │ Condition │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ ${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa.Arn} │ Allow  │ sts:AssumeRole          │ AWS:arn:${AWS::Partition}:iam::***:user/StrongDM                  │           │
+│   │                                                                            │        │                         │ Service:ec2.amazonaws.com                                                  │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ *                                                                          │ Allow  │ dynamodb:List*          │ AWS:${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+│   │                                                                            │        │ sqs:List*               │                                                                            │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ arn:aws:cloudformation:*:***:stack/*Inbox*                        │ Allow  │ cloudformation:*        │ AWS:${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ arn:aws:ssm:*:***:parameter/*                                     │ Allow  │ ssm:GetParameter        │ AWS:${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+│   │                                                                            │        │ ssm:GetParameters       │                                                                            │           │
+│   │                                                                            │        │ ssm:GetParametersByPath │                                                                            │           │
+├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
+│ + │ arn:aws:ssm:*:***:parameter/Inbox*                                │ Allow  │ ssm:*                   │ AWS:${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
+└───┴────────────────────────────────────────────────────────────────────────────┴────────┴─────────────────────────┴────────────────────────────────────────────────────────────────────────────┴───────────┘
+(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+Resources
+[+] AWS::IAM::Role Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa inboxpermissionsdeveloperroleqaD6B4997D 
+[+] AWS::IAM::Policy Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa/DefaultPolicy inboxpermissionsdeveloperroleqaDefaultPolicy7153A66A 
+
+Stack InboxPipeline/UsQaIv1/InboxNotificationsDb (UsQaIv1-InboxNotificationsDb)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-west-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-west-2', but are for the right account. Proceeding anyway.
+There were no differences
+Stack InboxPipeline/UsQaIv1/InboxNotificationsQueue (UsQaIv1-InboxNotificationsQueue)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-west-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-west-2', but are for the right account. Proceeding anyway.
+There were no differences
+Stack InboxPipeline/UsQaQaUsEast21/InboxNotificationsDb (UsQaQaUsEast21-InboxNotificationsDb)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-2', but are for the right account. Proceeding anyway.
+Resources
+[~] AWS::CloudFormation::Stack UsQaQaUsEast21/InboxNotificationsDb/@aws-cdk--aws-dynamodb.ReplicaProvider.NestedStack/@aws-cdk--aws-dynamodb.ReplicaProvider.NestedStackResource awscdkawsdynamodbReplicaProviderNestedStackawscdkawsdynamodbReplicaProviderNestedStackResource18E3F12D 
+ ├─ [~] NestedTemplate
+ │   └─ [~] .Resources:
+ │       ├─ [-] Removed: .CDKMetadata
+ │       ├─ [~] .IsCompleteHandler7073F4DA:
+ │       │   └─ [~] .Metadata:
+ │       │       └─ [~] .aws:asset:path:
+ │       │           ├─ [-] ../asset.bf53eade0fed618bd31abd4a168fedf9f79ebfc89bd9203c4cae720a42401a78
+ │       │           └─ [+] /home/runner/work/inbox-cdk/inbox-cdk/node_modules/aws-cdk-lib/aws-dynamodb/lib/replica-handler
+ │       ├─ [~] .OnEventHandler42BEBAE0:
+ │       │   └─ [~] .Metadata:
+ │       │       └─ [~] .aws:asset:path:
+ │       │           ├─ [-] ../asset.bf53eade0fed618bd31abd4a168fedf9f79ebfc89bd9203c4cae720a42401a78
+ │       │           └─ [+] /home/runner/work/inbox-cdk/inbox-cdk/node_modules/aws-cdk-lib/aws-dynamodb/lib/replica-handler
+ │       ├─ [~] .ProviderframeworkisComplete26D7B0CB:
+ │       │   └─ [~] .Metadata:
+ │       │       └─ [~] .aws:asset:path:
+ │       │           ├─ [-] ../asset.53c95d71cfd280747d971a38505aea07f812fdba75874a090358a2fc4f58f79b
+ │       │           └─ [+] /home/runner/work/inbox-cdk/inbox-cdk/node_modules/aws-cdk-lib/custom-resources/lib/provider-framework/runtime
+ │       ├─ [~] .ProviderframeworkonEvent83C1D0A7:
+ │       │   └─ [~] .Metadata:
+ │       │       └─ [~] .aws:asset:path:
+ │       │           ├─ [-] ../asset.53c95d71cfd280747d971a38505aea07f812fdba75874a090358a2fc4f58f79b
+ │       │           └─ [+] /home/runner/work/inbox-cdk/inbox-cdk/node_modules/aws-cdk-lib/custom-resources/lib/provider-framework/runtime
+ │       └─ [~] .ProviderframeworkonTimeout0B47CA38:
+ │           └─ [~] .Metadata:
+ │               └─ [~] .aws:asset:path:
+ │                   ├─ [-] ../asset.53c95d71cfd280747d971a38505aea07f812fdba75874a090358a2fc4f58f79b
+ │                   └─ [+] /home/runner/work/inbox-cdk/inbox-cdk/node_modules/aws-cdk-lib/custom-resources/lib/provider-framework/runtime
+ └─ [~] TemplateURL
+     └─ [~] .Fn::Join:
+         └─ @@ -5,6 +5,6 @@
+            [ ]     {
+            [ ]       "Ref": "AWS::URLSuffix"
+            [ ]     },
+            [-]     "/cdk-hnb659fds-assets-***-us-east-2/04a9bb122bcf2496e96db9b916b94820b82d5f86eba1ebc8d971c186b87f49df.json"
+            [+]     "/cdk-hnb659fds-assets-***-us-east-2/86622f56be5d85d50257ee9fe477e3a4f5e0423b8c5baf67da43f10fefe029fd.json"
+            [ ]   ]
+            [ ] ]
+
+Stack InboxPipeline/UsQaQaUsEast21/InboxNotificationsQueue (UsQaQaUsEast21-InboxNotificationsQueue)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-2', but are for the right account. Proceeding anyway.
+There were no differences
+Stack InboxPipeline/UsQaQaUsWest26/InboxNotificationsDb (UsQaQaUsWest26-InboxNotificationsDb)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-west-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-west-2', but are for the right account. Proceeding anyway.
+There were no differences
+Stack InboxPipeline/UsQaQaUsWest26/InboxNotificationsQueue (UsQaQaUsWest26-InboxNotificationsQueue)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-west-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-west-2', but are for the right account. Proceeding anyway.
+There were no differences

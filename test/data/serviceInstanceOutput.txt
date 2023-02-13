@@ -1,0 +1,74 @@
+Stack InboxServicePipeline/Qa-GitHubActions-Permissions/InboxServiceCdkGithubActions (Qa-GitHubActions-Permissions-InboxServiceCdkGithubActions)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-1', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-1', but are for the right account. Proceeding anyway.
+There were no differences
+Stack InboxServicePipeline/UsQaInboxServiceDeployHook/DeployHookUsQaMonorepoGitRefInboxServiceMaster (UsQaInboxServiceDeployHook-DeployHookUsQaMonorepoGitRefInboxServiceMaster)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-1', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-1', but are for the right account. Proceeding anyway.
+Resources
+[~] AWS::Lambda::Function UsQaInboxServiceDeployHook/DeployHookUsQaMonorepoGitRefInboxServiceMaster/deploy-hook-us-qa-monorepo-git-ref-inbox-service-master deployhookusqamonorepogitrefinboxservicemasterD709F599 
+ └─ [~] Metadata
+     └─ [~] .aws:asset:path:
+         ├─ [-] ../asset.e7c33903968f78f8bf44a146c1ecdfc0117956132c47ea7b6d3175a914314363
+         └─ [+] /home/runner/work/inbox-service-cdk/inbox-service-cdk/cdk.out/asset.e7c33903968f78f8bf44a146c1ecdfc0117956132c47ea7b6d3175a914314363
+
+Stack InboxServicePipeline/UsQaInboxServiceDeployHook/UsQaInboxServiceDeployHookDeployUserPermissions (UsQaInboxServiceDeployHook-UsQaInboxServiceDeployHookDeployUserPermissions)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-1', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-1', but are for the right account. Proceeding anyway.
+There were no differences
+Stack InboxServicePipeline/UsQaQaUsEast21/InboxServiceInstance (UsQaQaUsEast21-InboxServiceInstance)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-east-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-east-2', but are for the right account. Proceeding anyway.
+Resources
+[~] Custom::AWS UsQaQaUsEast21/InboxServiceInstance/InboxServiceInstanceUserRemote/Resource InboxServiceInstanceUserRemote229A3155 
+ ├─ [~] Create
+ │   ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676258561787"}}
+ │   └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676295292450"}}
+ └─ [~] Update
+     ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676258561787"}}
+     └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676295292450"}}
+[~] AWS::Lambda::Function UsQaQaUsEast21/InboxServiceInstance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
+ └─ [~] Metadata
+     └─ [~] .aws:asset:path:
+         ├─ [-] ../asset.400f664767ec04a0966c8d688fa643ee8f6d0c94c8d91a71d3af814cc9b9e6ab
+         └─ [+] /home/runner/work/inbox-service-cdk/inbox-service-cdk/node_modules/aws-cdk-lib/custom-resources/lib/aws-custom-resource/runtime
+
+Stack InboxServicePipeline/UsQaQaUsWest26/InboxServiceInstance (UsQaQaUsWest26-InboxServiceInstance)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-west-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-west-2', but are for the right account. Proceeding anyway.
+Resources
+[~] Custom::AWS UsQaQaUsWest26/InboxServiceInstance/InboxServiceInstanceUserRemote/Resource InboxServiceInstanceUserRemote229A3155 
+ ├─ [~] Create
+ │   ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676258561758"}}
+ │   └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676295292417"}}
+ └─ [~] Update
+     ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676258561758"}}
+     └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676295292417"}}
+[~] AWS::Lambda::Function UsQaQaUsWest26/InboxServiceInstance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
+ └─ [~] Metadata
+     └─ [~] .aws:asset:path:
+         ├─ [-] ../asset.400f664767ec04a0966c8d688fa643ee8f6d0c94c8d91a71d3af814cc9b9e6ab
+         └─ [+] /home/runner/work/inbox-service-cdk/inbox-service-cdk/node_modules/aws-cdk-lib/custom-resources/lib/aws-custom-resource/runtime
+
+Stack InboxServicePipeline/UsQaUsWest2/InboxServiceInstance (UsQaUsWest2-InboxServiceInstance)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-lookup-role-***-us-west-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::***:role/cdk-hnb659fds-deploy-role-***-us-west-2', but are for the right account. Proceeding anyway.
+Resources
+[~] Custom::AWS UsQaUsWest2/InboxServiceInstance/InboxServiceInstanceUserRemote/Resource InboxServiceInstanceUserRemote229A3155 
+ ├─ [~] Create
+ │   ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676258561804"}}
+ │   └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676295292468"}}
+ └─ [~] Update
+     ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676258561804"}}
+     └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployUsQaUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676295292468"}}
+[~] AWS::Lambda::Function UsQaUsWest2/InboxServiceInstance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
+ └─ [~] Metadata
+     └─ [~] .aws:asset:path:
+         ├─ [-] ../asset.400f664767ec04a0966c8d688fa643ee8f6d0c94c8d91a71d3af814cc9b9e6ab
+         └─ [+] /home/runner/work/inbox-service-cdk/inbox-service-cdk/node_modules/aws-cdk-lib/custom-resources/lib/aws-custom-resource/runtime
