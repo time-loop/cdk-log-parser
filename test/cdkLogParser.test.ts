@@ -1,7 +1,5 @@
 import { getParsedStacks, loadCdkDiffLog } from '../src/parsingLogic';
 
-test('no-op', () => {});
-
 describe('getParsedStacks', () => {
   test('should remove all non-sense changes from a service instance diff log', () => {
     const cdkDiffLogContent = loadCdkDiffLog('test/data/serviceInstanceOutput.txt');
@@ -11,6 +9,12 @@ describe('getParsedStacks', () => {
 
   test('should remove all non-sense changes from a infra diff log', () => {
     const cdkDiffLogContent = loadCdkDiffLog('test/data/infraOutput.txt');
+    const parsedStacks = getParsedStacks(cdkDiffLogContent);
+    expect(parsedStacks).toMatchSnapshot();
+  });
+
+  test('should ignore content before the first stack diff and NOT clobber the stack names', () => {
+    const cdkDiffLogContent = loadCdkDiffLog('test/data/dontClobberStackName.txt');
     const parsedStacks = getParsedStacks(cdkDiffLogContent);
     expect(parsedStacks).toMatchSnapshot();
   });

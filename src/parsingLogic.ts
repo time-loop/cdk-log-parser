@@ -55,7 +55,7 @@ function rebuildDiffsIntoCdkLog(stacks: string[]) {
 
 function separateDiffLogIntoStacks(log: string) {
   const stacks = log.split(new RegExp('(^Stack )', 'gm'));
-  if (stacks[0] === '') stacks.shift();
+  if (stacks[0] === '' || !stacks[0].startsWith('Stack')) stacks.shift();
   return stacks.map((_, i) => (i % 2 === 0 ? '' : stacks[i - 1] + stacks[i])).filter((e) => e);
 }
 
