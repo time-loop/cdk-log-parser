@@ -14,7 +14,7 @@ const STACK_REMOVAL_REGEX: [RegExp, string][] = [
   [new RegExp('^(.*)(\\w{64})(\\.zip)\n', 'gm'), ''],
   [
     new RegExp(
-      '\\[~] Custom::AWS.*\\n.*Create.*\\n.*getParameter.*\\n.*getParameter.*\\n.*Update.*\\n.*getParameter.*\\n.*getParameter.*',
+      '\\[~] Custom::AWS.*\\n.*Create.*\\n.*getParameter(.*)region.*\\n.*getParameter(\\1)region.*\\n.*Update.*\\n.*getParameter(\\1).*\\n.*getParameter(\\1).*',
       'gm',
     ),
     '',
@@ -47,8 +47,11 @@ function rebuildDiffsIntoCdkLog(stacks: string[]) {
     const stackName = stack.match(new RegExp('(^Stack .*)', 'gm'))?.[0] ?? '';
     const stackDetails = stack.replace(new RegExp('(^Stack .*)\n', 'gm'), '');
     const cleanStackDetails = cleanCDKDiffForSingleStack(stackDetails);
-    cdkLogParts.push(stackName);
-    cdkLogParts.push(`${cleanStackDetails}\n`);
+
+    if (!cleanStackDetails.includes('There were no differences')) {
+      cdkLogParts.push(stackName);
+      cdkLogParts.push(`${cleanStackDetails}\n`);
+    }
   }
   return cdkLogParts.join('\n');
 }
