@@ -1,0 +1,29 @@
+Done in 0.14s.
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalDailyDueDateSummaryEmailInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-daily-due-date-summary-email-r; using truncated name: cu-staging-staging-us-east-2-1-iv-daily-due-date-summary-email-r
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalDashboardsTaskStatesInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-dashboards-task-states-redeplo; using truncated name: cu-staging-staging-us-east-2-1-iv-dashboards-task-states-redeplo
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalDescriptionProcessorInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-description-processor-redeploy; using truncated name: cu-staging-staging-us-east-2-1-iv-description-processor-redeploy
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalDesktopNotificationsInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-desktop-notifications-redeploy; using truncated name: cu-staging-staging-us-east-2-1-iv-desktop-notifications-redeploy
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalGcalDeleteInactiveSyncsInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-gcal-delete-inactive-syncs-red; using truncated name: cu-staging-staging-us-east-2-1-iv-gcal-delete-inactive-syncs-red
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalGcalQueueSchedulersInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-gcal-queue-schedulers-redeploy; using truncated name: cu-staging-staging-us-east-2-1-iv-gcal-queue-schedulers-redeploy
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalGcalRemoveSyncEventsInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-gcal-remove-sync-events-redepl; using truncated name: cu-staging-staging-us-east-2-1-iv-gcal-remove-sync-events-redepl
+[Warning at /ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalGcalSyncFromGoogleInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-iv-gcal-sync-from-google-redeploy; using truncated name: cu-staging-staging-us-east-2-1-iv-gcal-sync-from-google-redeploy
+[Warning at /ClickupEcsRegionalPipeline/EcsGlobalStagingStagingUsEast21CommonWorkerBrowserNotificationsInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-worker-browser-notifications-rede; using truncated name: cu-staging-staging-us-east-2-1-worker-browser-notifications-rede
+[Warning at /ClickupEcsRegionalPipeline/EcsGlobalStagingStagingUsEast21CommonWorkerDescriptionProcessorInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-worker-description-processor-rede; using truncated name: cu-staging-staging-us-east-2-1-worker-description-processor-rede
+[Warning at /ClickupEcsShardWorkerPipeline/EcsGlobalStagingStagingUsEast21ShardWorkerDueDateSummariesInstance/Instance] Requested name is too long: cu-staging-staging-us-east-2-1-worker-due-date-summaries-redeplo; using truncated name: cu-staging-staging-us-east-2-1-worker-due-date-summaries-redeplo
+Stack ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance (EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance-Instance)
+current credentials could not be used to assume 'arn:aws:iam::514308641592:role/cdk-hnb659fds-lookup-role-514308641592-us-east-2', but are for the right account. Proceeding anyway.
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+current credentials could not be used to assume 'arn:aws:iam::514308641592:role/cdk-hnb659fds-deploy-role-514308641592-us-east-2', but are for the right account. Proceeding anyway.
+Resources
+[~] Custom::AWS EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/EcsGlobalStagingStagingUsEast21UserRemote/Resource EcsGlobalStagingStagingUsEast21UserRemote8B37113E 
+ ├─ [~] Create
+ │   ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676068626875"}}
+ │   └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/NewSSMName"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1677023202895"}}
+ └─ [~] Update
+     ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676068626875"}}
+     └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/NewSSMName"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1677023202895"}}
+[~] AWS::Lambda::Function EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
+ └─ [~] Metadata
+     └─ [~] .aws:asset:path:
+         ├─ [-] ../asset.400f664767ec04a0966c8d688fa643ee8f6d0c94c8d91a71d3af814cc9b9e6ab
+         └─ [+] /home/runner/work/clickup-ecs-cdk/clickup-ecs-cdk/node_modules/aws-cdk-lib/custom-resources/lib/aws-custom-resource/runtime

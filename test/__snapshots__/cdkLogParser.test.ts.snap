@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getParsedStacks should NOT remove SSM diffs if the SSM name/path changes 1`] = `""`;
+exports[`getParsedStacks should NOT remove SSM diffs if the SSM name/path changes 1`] = `
+"Stack ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance (EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance-Instance)
+Resources
+[~] Custom::AWS EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/EcsGlobalStagingStagingUsEast21UserRemote/Resource EcsGlobalStagingStagingUsEast21UserRemote8B37113E 
+ ├─ [~] Create
+ │   ├─ [-] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1676068626875\\"}}
+ │   └─ [+] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/NewSSMName\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1677023202895\\"}}
+ └─ [~] Update
+     ├─ [-] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1676068626875\\"}}
+     └─ [+] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/NewSSMName\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1677023202895\\"}}
+[~] AWS::Lambda::Function EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
+ 
+
+"
+`;
 
 exports[`getParsedStacks should ignore content before the first stack diff and NOT clobber the stack names 1`] = `
 "Stack InboxProcessingServicePipeline/GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction (GlobalProdInboxProcessingServiceDeployHook-DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction)
