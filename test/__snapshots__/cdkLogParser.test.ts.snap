@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getParsedStacks should NOT remove SSM diffs if the SSM name/path changes 1`] = `
+"Stack ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance (EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance-Instance)
+Resources
+[~] Custom::AWS EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/EcsGlobalStagingStagingUsEast21UserRemote/Resource EcsGlobalStagingStagingUsEast21UserRemote8B37113E 
+ ├─ [~] Create
+ │   ├─ [-] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1676068626875\\"}}
+ │   └─ [+] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/NewSSMName\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1677023202895\\"}}
+ └─ [~] Update
+     ├─ [-] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1676068626875\\"}}
+     └─ [+] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/NewSSMName\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1677023202895\\"}}
+[~] AWS::Lambda::Function EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
+ 
+
+"
+`;
+
 exports[`getParsedStacks should ignore content before the first stack diff and NOT clobber the stack names 1`] = `
 "Stack InboxProcessingServicePipeline/GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction (GlobalProdInboxProcessingServiceDeployHook-DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction)
 IAM Statement Changes
@@ -26,17 +42,11 @@ Other Changes
 [+] Unknown Rules: {\\"CheckBootstrapVersion\\":{\\"Assertions\\":[{\\"Assert\\":{\\"Fn::Not\\":[{\\"Fn::Contains\\":[[\\"1\\",\\"2\\",\\"3\\",\\"4\\",\\"5\\"],{\\"Ref\\":\\"BootstrapVersion\\"}]}]},\\"AssertDescription\\":\\"CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.\\"}]}}
 
 
-
-Stack InboxProcessingServicePipeline/GlobalProdInboxProcessingServiceDeployHook/GlobalProdInboxProcessingServiceDeployHookDeployUserPermissions (GlobalProdInboxProcessingServiceDeployHook-GlobalProdInboxProcessingServiceDeployHookDeployUserPermissions)
-There were no differences
 "
 `;
 
 exports[`getParsedStacks should remove all non-sense changes from a infra diff log 1`] = `
-"Stack InboxPipeline/Qa-GitHubActions-Permissions/InboxCdkGithubActions (Qa-GitHubActions-Permissions-InboxCdkGithubActions)
-There were no differences
-
-Stack InboxPipeline/Qa-Permissions/InboxPermissions (Qa-Permissions-InboxPermissions)
+"Stack InboxPipeline/Qa-Permissions/InboxPermissions (Qa-Permissions-InboxPermissions)
 IAM Statement Changes
 ┌───┬────────────────────────────────────────────────────────────────────────────┬────────┬─────────────────────────┬────────────────────────────────────────────────────────────────────────────┬───────────┐
 │   │ Resource                                                                   │ Effect │ Action                  │ Principal                                                                  │ Condition │
@@ -62,44 +72,7 @@ Resources
 [+] AWS::IAM::Policy Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa/DefaultPolicy inboxpermissionsdeveloperroleqaDefaultPolicy7153A66A 
 
 
-
-Stack InboxPipeline/UsQaIv1/InboxNotificationsDb (UsQaIv1-InboxNotificationsDb)
-There were no differences
-
-Stack InboxPipeline/UsQaIv1/InboxNotificationsQueue (UsQaIv1-InboxNotificationsQueue)
-There were no differences
-
-Stack InboxPipeline/UsQaQaUsEast21/InboxNotificationsDb (UsQaQaUsEast21-InboxNotificationsDb)
-There were no differences
-
-Stack InboxPipeline/UsQaQaUsEast21/InboxNotificationsQueue (UsQaQaUsEast21-InboxNotificationsQueue)
-There were no differences
-
-Stack InboxPipeline/UsQaQaUsWest26/InboxNotificationsDb (UsQaQaUsWest26-InboxNotificationsDb)
-There were no differences
-
-Stack InboxPipeline/UsQaQaUsWest26/InboxNotificationsQueue (UsQaQaUsWest26-InboxNotificationsQueue)
-There were no differences
 "
 `;
 
-exports[`getParsedStacks should remove all non-sense changes from a service instance diff log 1`] = `
-"Stack InboxServicePipeline/Qa-GitHubActions-Permissions/InboxServiceCdkGithubActions (Qa-GitHubActions-Permissions-InboxServiceCdkGithubActions)
-There were no differences
-
-Stack InboxServicePipeline/UsQaInboxServiceDeployHook/DeployHookUsQaMonorepoGitRefInboxServiceMaster (UsQaInboxServiceDeployHook-DeployHookUsQaMonorepoGitRefInboxServiceMaster)
-There were no differences
-
-Stack InboxServicePipeline/UsQaInboxServiceDeployHook/UsQaInboxServiceDeployHookDeployUserPermissions (UsQaInboxServiceDeployHook-UsQaInboxServiceDeployHookDeployUserPermissions)
-There were no differences
-
-Stack InboxServicePipeline/UsQaQaUsEast21/InboxServiceInstance (UsQaQaUsEast21-InboxServiceInstance)
-There were no differences
-
-Stack InboxServicePipeline/UsQaQaUsWest26/InboxServiceInstance (UsQaQaUsWest26-InboxServiceInstance)
-There were no differences
-
-Stack InboxServicePipeline/UsQaUsWest2/InboxServiceInstance (UsQaUsWest2-InboxServiceInstance)
-There were no differences
-"
-`;
+exports[`getParsedStacks should remove all non-sense changes from a service instance diff log 1`] = `""`;

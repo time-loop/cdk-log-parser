@@ -18,4 +18,10 @@ describe('getParsedStacks', () => {
     const parsedStacks = getParsedStacks(cdkDiffLogContent);
     expect(parsedStacks).toMatchSnapshot();
   });
+
+  test('should NOT remove SSM diffs if the SSM name/path changes', () => {
+    const cdkDiffLogContent = loadCdkDiffLog('test/data/changedSSM.txt');
+    const parsedStacks = getParsedStacks(cdkDiffLogContent);
+    expect(parsedStacks).toMatchSnapshot();
+  });
 });
