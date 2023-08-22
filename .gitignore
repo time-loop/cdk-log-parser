@@ -2,6 +2,7 @@
 !/.gitattributes
 !/.projen/tasks.json
 !/.projen/deps.json
+!/renovate.json5
 !/.projen/files.json
 !/.github/workflows/pull-request-lint.yml
 !/.github/workflows/auto-approve.yml
@@ -60,5 +61,6 @@ junit.xml
 !/.github/workflows/renovate.yml
 !/.github/workflows/semgrep.yml
 !/.github/workflows/add-to-project.yml
+!/.github/workflows/update-projen-main.yml
+!/.github/workflows/add-to-update-projen-project.yml
 !/typedoc.json
-!/renovate.json5
