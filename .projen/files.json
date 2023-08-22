@@ -21,6 +21,7 @@
     ".projen/files.json",
     ".projen/tasks.json",
     "codecov.yml",
+    "LICENSE",
     "renovate.json5",
     "tsconfig.dev.json",
     "tsconfig.json",
