@@ -35,18 +35,17 @@
     }
   ],
   "ignoreDeps": [
-    "@types/jest",
     "@types/node",
     "@typescript-eslint/eslint-plugin",
     "@typescript-eslint/parser",
     "eslint",
     "jest-junit",
-    "jest",
     "npm-check-updates",
     "standard-version",
-    "ts-jest",
     "ts-node",
-    "node"
+    "node",
+    "@time-loop/clickup-projen",
+    "projen"
   ],
   "rangeStrategy": "bump",
   "prHourlyLimit": 0,

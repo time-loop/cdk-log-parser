@@ -20,6 +20,7 @@
     "test:watch": "npx projen test:watch",
     "typedocDocgen": "npx projen typedocDocgen",
     "unbump": "npx projen unbump",
+    "update-projen": "npx projen update-projen",
     "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
     "projen": "npx projen"
@@ -33,19 +34,19 @@
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "esbuild": "^0.18.17",
+    "esbuild": "^0.19.2",
     "eslint": "^8",
-    "eslint-config-prettier": "^8.9.0",
-    "eslint-import-resolver-node": "^0.3.7",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-import-resolver-node": "^0.3.9",
     "eslint-import-resolver-typescript": "^2.7.1",
-    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^27",
     "jest-junit": "^15",
     "jsii-release": "^0.2.737",
     "npm-check-updates": "^16",
     "prettier": "^2.8.8",
-    "projen": "^0.71.161",
+    "projen": "^0.72.21",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10",
@@ -54,9 +55,9 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@time-loop/clickup-projen": "^0.0.161",
+    "@time-loop/clickup-projen": "^0.0.172",
     "aws-cdk-lib": "^2.64.0",
-    "aws-sdk": "^2.1427.0"
+    "aws-sdk": "^2.1442.0"
   },
   "engines": {
     "node": ">= 14.18.0"
