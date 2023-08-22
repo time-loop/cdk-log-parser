@@ -23,6 +23,7 @@
 /.projen/files.json linguist-generated
 /.projen/tasks.json linguist-generated
 /codecov.yml linguist-generated
+/LICENSE linguist-generated
 /package.json linguist-generated
 /renovate.json5 linguist-generated
 /tsconfig.dev.json linguist-generated
