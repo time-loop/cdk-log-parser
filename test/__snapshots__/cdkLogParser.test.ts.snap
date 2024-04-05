@@ -5,11 +5,11 @@ exports[`getParsedStacks should NOT remove SSM diffs if the SSM name/path change
 Resources
 [~] Custom::AWS EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/EcsGlobalStagingStagingUsEast21UserRemote/Resource EcsGlobalStagingStagingUsEast21UserRemote8B37113E 
  ├─ [~] Create
- │   ├─ [-] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1676068626875\\"}}
- │   └─ [+] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/NewSSMName\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1677023202895\\"}}
+ │   ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676068626875"}}
+ │   └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/NewSSMName"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1677023202895"}}
  └─ [~] Update
-     ├─ [-] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1676068626875\\"}}
-     └─ [+] {\\"service\\":\\"SSM\\",\\"action\\":\\"getParameter\\",\\"parameters\\":{\\"Name\\":\\"/ClickUpEcs/Deploy/DeployUser/NewSSMName\\"},\\"region\\":\\"us-east-1\\",\\"physicalResourceId\\":{\\"id\\":\\"timestamp1677023202895\\"}}
+     ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676068626875"}}
+     └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/NewSSMName"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1677023202895"}}
 [~] AWS::Lambda::Function EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
  
 
@@ -33,13 +33,13 @@ IAM Policy Changes
 (NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
 
 Parameters
-[+] Parameter GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/SsmParameterValue:--ClickUpEcs--Deploy--DeployUser--DeployGlobalProdUserArn:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter SsmParameterValueClickUpEcsDeployDeployUserDeployGlobalProdUserArnC96584B6F00A464EAD1953AFF4B05118Parameter: {\\"Type\\":\\"AWS::SSM::Parameter::Value<String>\\",\\"Default\\":\\"/ClickUpEcs/Deploy/DeployUser/DeployGlobalProdUserArn\\"}
+[+] Parameter GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/SsmParameterValue:--ClickUpEcs--Deploy--DeployUser--DeployGlobalProdUserArn:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter SsmParameterValueClickUpEcsDeployDeployUserDeployGlobalProdUserArnC96584B6F00A464EAD1953AFF4B05118Parameter: {"Type":"AWS::SSM::Parameter::Value<String>","Default":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalProdUserArn"}
 
 Resources
 [+] AWS::IAM::Role GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/deploy-hook-global-prod-monorepo-git-ref-inbox-processing-service-production/ServiceRole deployhookglobalprodmonorepogitrefinboxprocessingserviceproductionServiceRole8BD826CE 
 
 Other Changes
-[+] Unknown Rules: {\\"CheckBootstrapVersion\\":{\\"Assertions\\":[{\\"Assert\\":{\\"Fn::Not\\":[{\\"Fn::Contains\\":[[\\"1\\",\\"2\\",\\"3\\",\\"4\\",\\"5\\"],{\\"Ref\\":\\"BootstrapVersion\\"}]}]},\\"AssertDescription\\":\\"CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.\\"}]}}
+[+] Unknown Rules: {"CheckBootstrapVersion":{"Assertions":[{"Assert":{"Fn::Not":[{"Fn::Contains":[["1","2","3","4","5"],{"Ref":"BootstrapVersion"}]}]},"AssertDescription":"CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."}]}}
 
 
 "
