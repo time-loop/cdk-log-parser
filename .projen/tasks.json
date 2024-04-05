@@ -238,10 +238,7 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade npm-check-updates"
-        },
-        {
-          "exec": "npm-check-updates --upgrade --target=minor --filter=projen,@time-loop/clickup-projen"
+          "exec": "npx npm-check-updates@16 --upgrade --target=latest --peer --dep=dev,peer,prod,optional --filter=projen,@time-loop/clickup-projen"
         },
         {
           "exec": "yarn install --check-files"
@@ -265,16 +262,13 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade npm-check-updates"
-        },
-        {
-          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,esbuild,eslint-config-prettier,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,eslint,jest,jest-junit,jsii-release,npm-check-updates,prettier,projen,standard-version,ts-jest,ts-node,typedoc,typedoc-plugin-markdown,typescript,@time-loop/clickup-projen,aws-cdk-lib,aws-sdk"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,esbuild,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,eslint,jest,jest-junit,jsii-release,prettier,projen,standard-version,ts-jest,ts-node,typedoc,typedoc-plugin-markdown,typescript,@time-loop/clickup-projen,aws-cdk-lib,aws-sdk"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser esbuild eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit jsii-release npm-check-updates prettier projen standard-version ts-jest ts-node typedoc typedoc-plugin-markdown typescript @time-loop/clickup-projen aws-cdk-lib aws-sdk"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs esbuild eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit jsii-release prettier projen standard-version ts-jest ts-node typedoc typedoc-plugin-markdown typescript @time-loop/clickup-projen aws-cdk-lib aws-sdk"
         },
         {
           "exec": "npx projen"

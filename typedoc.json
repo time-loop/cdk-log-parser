@@ -5,5 +5,8 @@
   ],
   "out": "docs/",
   "readme": "none",
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ],
   "disableSources": true
 }
