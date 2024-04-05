@@ -54,7 +54,7 @@
     "typescript": "^5.4.4"
   },
   "dependencies": {
-    "@time-loop/clickup-projen": "^0.0.200",
+    "@time-loop/clickup-projen": "^1.5.3",
     "aws-cdk-lib": "^2.135.0",
     "aws-sdk": "^2.1593.0"
   },

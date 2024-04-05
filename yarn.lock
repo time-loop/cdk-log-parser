@@ -1702,15 +1702,15 @@
     "@smithy/util-buffer-from" "^2.2.0"
     tslib "^2.6.2"
 
-"@time-loop/clickup-projen@^0.0.200":
-  version "0.0.200"
-  resolved "https://npm.pkg.github.com/download/@time-loop/clickup-projen/0.0.200/c73b6672d884715f740957651d4fb11f12c77df2#c73b6672d884715f740957651d4fb11f12c77df2"
-  integrity sha512-NxFvUuYAZlr4QUcM496UbrrqJsBQb0Lij2wgXiBH2icH7BCLBfKbYrNr6hRP+F5rO2gpkWMCCc/BeUD8q7dOuQ==
+"@time-loop/clickup-projen@^1.5.3":
+  version "1.5.3"
+  resolved "https://npm.pkg.github.com/download/@time-loop/clickup-projen/1.5.3/d8afaad21d85663e75291323716008ffeba46885#d8afaad21d85663e75291323716008ffeba46885"
+  integrity sha512-I3ZefhM9DlAYaRGqVZie77vZHzHapU8AK0DAjq2dqymaceSzs2sudiPr2+mDW5IKNyWgsM80MO0SOJGdycz6yg==
   dependencies:
     cson-parser "^4.0.9"
-    projen "^0.77.4"
-    semver "^7.5.4"
-    ts-deepmerge "^6.2.0"
+    projen "^0.80.4"
+    semver "^7.6.0"
+    ts-deepmerge "^6.2.1"
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -5520,27 +5520,7 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-projen@^0.77.4:
-  version "0.77.6"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.77.6.tgz#480c1af4246bba55e8d0732ff7a9d1804ce414be"
-  integrity sha512-nXbbDr81UjfLjCfVfHGfGPIjiN7INSyMUa52FYupX0TmybMq+CnvX8o0O45feOLLhsifNq7EHXtF+hgBtpBb8A==
-  dependencies:
-    "@iarna/toml" "^2.2.5"
-    case "^1.6.3"
-    chalk "^4.1.2"
-    comment-json "4.2.2"
-    constructs "^10.0.0"
-    conventional-changelog-config-spec "^2.1.0"
-    fast-json-patch "^3.1.1"
-    glob "^8"
-    ini "^2.0.0"
-    semver "^7.5.4"
-    shx "^0.3.4"
-    xmlbuilder2 "^3.1.1"
-    yaml "^2.2.2"
-    yargs "^17.7.2"
-
-projen@^0.80.18:
+projen@^0.80.18, projen@^0.80.4:
   version "0.80.18"
   resolved "https://registry.yarnpkg.com/projen/-/projen-0.80.18.tgz#909af3b4b4178a05346c336bd7fcfe0c3c2c17a8"
   integrity sha512-qmSUsXQYUdc0uIJLZeIZVP8EC2rtPFGOxz1/IC46HW0wJgRD/zXUNfXhwiPhrHNfoGZpkrBsfbHZV6x9YC3cgw==
@@ -6321,7 +6301,7 @@ ts-api-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.0.2.tgz#7c094f753b6705ee4faee25c3c684ade52d66d99"
   integrity sha512-Cbu4nIqnEdd+THNEsBdkolnOXhg0I8XteoHaEKgvsxpsbWda4IsUut2c187HxywQCvveojow0Dgw/amxtSKVkQ==
 
-ts-deepmerge@^6.2.0:
+ts-deepmerge@^6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/ts-deepmerge/-/ts-deepmerge-6.2.1.tgz#4d564b44bc2a69e35a0b08bfa904ef176372e7dd"
   integrity sha512-8CYSLazCyj0DJDpPIxOFzJG46r93uh6EynYjuey+bxcLltBeqZL7DMfaE5ZPzZNFlav7wx+2TDa/mBl8gkTYzw==

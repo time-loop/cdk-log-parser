@@ -108,7 +108,8 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools projenrc .projenrc.ts"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
+          "receiveArgs": true
         }
       ]
     },
@@ -262,7 +263,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,esbuild,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,eslint,jest,jest-junit,jsii-release,prettier,projen,standard-version,ts-jest,ts-node,typedoc,typedoc-plugin-markdown,typescript,@time-loop/clickup-projen,aws-cdk-lib,aws-sdk"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/jest,esbuild,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,jest,jsii-release,prettier,projen,ts-jest,typedoc,typedoc-plugin-markdown,typescript,@time-loop/clickup-projen,aws-cdk-lib,aws-sdk"
         },
         {
           "exec": "yarn install --check-files"
