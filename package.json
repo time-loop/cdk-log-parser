@@ -32,8 +32,8 @@
   "devDependencies": {
     "@types/jest": "^27",
     "@types/node": "^14",
-    "@typescript-eslint/eslint-plugin": "^5",
-    "@typescript-eslint/parser": "^5",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
     "esbuild": "^0.19.2",
     "eslint": "^8",
     "eslint-config-prettier": "^9.0.0",
@@ -46,7 +46,7 @@
     "jsii-release": "^0.2.737",
     "npm-check-updates": "^16",
     "prettier": "^3.0.2",
-    "projen": "^0.72.21",
+    "projen": "^0.73.3",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10",
@@ -55,7 +55,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@time-loop/clickup-projen": "^0.0.172",
+    "@time-loop/clickup-projen": "^0.0.175",
     "aws-cdk-lib": "^2.64.0",
     "aws-sdk": "^2.1442.0"
   },
