@@ -24,4 +24,10 @@ describe('getParsedStacks', () => {
     const parsedStacks = getParsedStacks(cdkDiffLogContent);
     expect(parsedStacks).toMatchSnapshot();
   });
+
+  test('should ignore changes that only consist of updated versions in Tags', () => {
+    const cdkDiffLogContent = loadCdkDiffLog('test/data/versionUpdatesInTags.txt');
+    const parsedStacks = getParsedStacks(cdkDiffLogContent);
+    expect(parsedStacks).toMatchSnapshot();
+  });
 });

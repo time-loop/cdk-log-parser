@@ -1,0 +1,94 @@
+Failed to create change set with error: 'User: arn:aws:sts::***:assumed-role/Thing-cdk-github-actions-role/GitHubActions is not authorized to perform: cloudformation:DeleteChangeSet on resource: arn:aws:cloudformation:us-east-1:***:stack/Env-GitHubActions-Permissions-ThingCdkGithubActions/<uuid> because no identity-based policy allows the cloudformation:DeleteChangeSet action', falling back to no change-set diff
+Resources
+[~] AWS::IAM::Role Env-GitHubActions-Permissions/ThingCdkGithubActions/Thing-cdk-github-actions-role Thingcdkgithubactionsrole7D1FF5BB 
+ └─ [~] Tags
+     └─ @@ -61,11 +61,11 @@
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library1",
+        [-]   "Value": "8.49.7"
+        [+]   "Value": "8.49.13"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library-number-2",
+        [-]   "Value": "30.5.0"
+        [+]   "Value": "30.9.1"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/cdk-log-parser",
+
+Stack ThingPipeline/Env-Permissions/ThingPermissions (Env-Permissions-ThingPermissions)
+(To get rid of this warning, please upgrade to bootstrap version >= 8)
+[~] AWS::IAM::Role Env-Permissions/ThingPermissions/Thing-permissions-developer-role-qa Thingpermissionsdeveloperrole
+ └─ [~] Tags
+     └─ @@ -61,11 +61,11 @@
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library1",
+        [-]   "Value": "8.49.7"
+        [+]   "Value": "8.49.13"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library-number-2",
+        [-]   "Value": "30.5.0"
+        [+]   "Value": "30.9.1"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/cdk-log-parser",
+
+Stack ThingPipeline/UsEnvIv1/BotName (UsEnvIv1-BotName)
+Failed to create change set with error: 'User: arn:aws:sts::***:assumed-role/Thing-cdk-github-actions-role/GitHubActions is not authorized to perform: cloudformation:DeleteChangeSet on resource: arn:aws:cloudformation:us-west-2:***:stack/UsEnvIv1-BotName/<uuid> because no identity-based policy allows the cloudformation:DeleteChangeSet action', falling back to no change-set diff
+Resources
+[~] AWS::IAM::Role UsEnvIv1/BotName/bot-name-role botnamebotrole34FBF5D4 
+ └─ [~] Tags
+     └─ @@ -61,11 +61,11 @@
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library1",
+        [-]   "Value": "8.49.7"
+        [+]   "Value": "8.49.13"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library-number-2",
+        [-]   "Value": "30.5.0"
+        [+]   "Value": "30.9.1"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/cdk-log-parser",
+[~] AWS::SecretsManager::Secret UsEnvIv1/BotName/DeployBotGhPatSecret DeployBotGhPatSecret322D5392 
+ └─ [~] Tags
+     └─ @@ -61,11 +61,11 @@
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library1",
+        [-]   "Value": "8.49.7"
+        [+]   "Value": "8.49.13"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library-number-2",
+        [-]   "Value": "30.5.0"
+        [+]   "Value": "30.9.1"
+        [ ] },
+        [+] {
+        [+]   "Key": "A-brand-new-tag-that-should-remain",
+        [+]   "Value": "important value"
+        [+] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/cdk-log-parser",
+[~] AWS::SecretsManager::Secret UsEnvIv1/BotName/DeployBotEnvPassSecret DeployBotEnvPassSecretFB85993C 
+ └─ [~] Tags
+     └─ @@ -61,11 +61,11 @@
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library1",
+        [-]   "Value": "8.49.7"
+        [+]   "Value": "8.49.13"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library-number-2",
+        [-]   "Value": "30.5.0"
+        [+]   "Value": "30.9.1"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/cdk-log-parser",
+[~] AWS::IAM::Role UsEnvIv1/BotName/CUDeployBotLambda/ServiceRole CUDeployBotLambdaServiceRoleEB15A1A9 

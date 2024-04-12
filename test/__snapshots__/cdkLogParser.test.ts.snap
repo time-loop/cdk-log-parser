@@ -1,78 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getParsedStacks should NOT remove SSM diffs if the SSM name/path changes 1`] = `
-"Stack ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance (EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance-Instance)
-Resources
-[~] Custom::AWS EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/EcsGlobalStagingStagingUsEast21UserRemote/Resource EcsGlobalStagingStagingUsEast21UserRemote8B37113E 
- ├─ [~] Create
- │   ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676068626875"}}
- │   └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/NewSSMName"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1677023202895"}}
- └─ [~] Update
-     ├─ [-] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalStagingUserArn"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1676068626875"}}
-     └─ [+] {"service":"SSM","action":"getParameter","parameters":{"Name":"/ClickUpEcs/Deploy/DeployUser/NewSSMName"},"region":"us-east-1","physicalResourceId":{"id":"timestamp1677023202895"}}
-[~] AWS::Lambda::Function EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance/AWS679f53fac002430cb0da5b7982bd2287 AWS679f53fac002430cb0da5b7982bd22872D164C4C 
- 
+exports[`getParsedStacks should NOT remove SSM diffs if the SSM name/path changes 1`] = `""`;
 
+exports[`getParsedStacks should ignore changes that only consist of updated versions in Tags 1`] = `
+"Stack ThingPipeline/UsEnvIv1/BotName (UsEnvIv1-BotName)
+Failed to create change set with error: 'User: arn:aws:sts::***:assumed-role/Thing-cdk-github-actions-role/GitHubActions is not authorized to perform: cloudformation:DeleteChangeSet on resource: arn:aws:cloudformation:us-west-2:***:stack/UsEnvIv1-BotName/<uuid> because no identity-based policy allows the cloudformation:DeleteChangeSet action', falling back to no change-set diff
+Resources
+~] AWS::SecretsManager::Secret UsEnvIv1/BotName/DeployBotGhPatSecret DeployBotGhPatSecret322D5392 
+ └─ [~] Tags
+     └─ @@ -61,11 +61,11 @@
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library1",
+        [-]   "Value": "8.49.7"
+        [+]   "Value": "8.49.13"
+        [ ] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/library-number-2",
+        [-]   "Value": "30.5.0"
+        [+]   "Value": "30.9.1"
+        [ ] },
+        [+] {
+        [+]   "Key": "A-brand-new-tag-that-should-remain",
+        [+]   "Value": "important value"
+        [+] },
+        [ ] {
+        [ ]   "Key": "version-@time-loop/cdk-log-parser",
+[~] AWS::IAM::Role UsEnvIv1/BotName/CUDeployBotLambda/ServiceRole CUDeployBotLambdaServiceRoleEB15A1A9 
 "
 `;
 
-exports[`getParsedStacks should ignore content before the first stack diff and NOT clobber the stack names 1`] = `
-"Stack InboxProcessingServicePipeline/GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction (GlobalProdInboxProcessingServiceDeployHook-DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction)
-IAM Statement Changes
-┌───┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬────────┬───────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬───────────┐
-│   │ Resource                                                                                                                                                                                                      │ Effect │ Action                │ Principal                                                                                                                                                                                                                                           │ Condition │
-├───┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼───────────┤
-│ + │ \${GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/deploy-hook-global-prod-monorepo-git-ref-inbox-processing-service-production.Arn}             │ Allow  │ lambda:InvokeFunction │ Service:\${GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/SsmParameterValue:--ClickUpEcs--Deploy--DeployUser--DeployGlobalProdUserArn:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter} │           │
-└───┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴────────┴───────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴───────────┘
-IAM Policy Changes
-┌───┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬────────────────────────────────────────────────────────────────────────────────┐
-│   │ Resource                                                                                                                                                                                                  │ Managed Policy ARN                                                             │
-├───┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────────────────────────────┤
-│ + │ \${GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/deploy-hook-global-prod-monorepo-git-ref-inbox-processing-service-production/ServiceRole} │ arn:\${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole │
-└───┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴────────────────────────────────────────────────────────────────────────────────┘
-(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+exports[`getParsedStacks should ignore content before the first stack diff and NOT clobber the stack names 1`] = `""`;
 
-Parameters
-[+] Parameter GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/SsmParameterValue:--ClickUpEcs--Deploy--DeployUser--DeployGlobalProdUserArn:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter SsmParameterValueClickUpEcsDeployDeployUserDeployGlobalProdUserArnC96584B6F00A464EAD1953AFF4B05118Parameter: {"Type":"AWS::SSM::Parameter::Value<String>","Default":"/ClickUpEcs/Deploy/DeployUser/DeployGlobalProdUserArn"}
-
-Resources
-[+] AWS::IAM::Role GlobalProdInboxProcessingServiceDeployHook/DeployHookGlobalProdMonorepoGitRefInboxProcessingServiceProduction/deploy-hook-global-prod-monorepo-git-ref-inbox-processing-service-production/ServiceRole deployhookglobalprodmonorepogitrefinboxprocessingserviceproductionServiceRole8BD826CE 
-
-Other Changes
-[+] Unknown Rules: {"CheckBootstrapVersion":{"Assertions":[{"Assert":{"Fn::Not":[{"Fn::Contains":[["1","2","3","4","5"],{"Ref":"BootstrapVersion"}]}]},"AssertDescription":"CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."}]}}
-
-
-"
-`;
-
-exports[`getParsedStacks should remove all non-sense changes from a infra diff log 1`] = `
-"Stack InboxPipeline/Qa-Permissions/InboxPermissions (Qa-Permissions-InboxPermissions)
-IAM Statement Changes
-┌───┬────────────────────────────────────────────────────────────────────────────┬────────┬─────────────────────────┬────────────────────────────────────────────────────────────────────────────┬───────────┐
-│   │ Resource                                                                   │ Effect │ Action                  │ Principal                                                                  │ Condition │
-├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
-│ + │ \${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa.Arn} │ Allow  │ sts:AssumeRole          │ AWS:arn:\${AWS::Partition}:iam::***:user/StrongDM                  │           │
-│   │                                                                            │        │                         │ Service:ec2.amazonaws.com                                                  │           │
-├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
-│ + │ *                                                                          │ Allow  │ dynamodb:List*          │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
-│   │                                                                            │        │ sqs:List*               │                                                                            │           │
-├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
-│ + │ arn:aws:cloudformation:*:***:stack/*Inbox*                        │ Allow  │ cloudformation:*        │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
-├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
-│ + │ arn:aws:ssm:*:***:parameter/*                                     │ Allow  │ ssm:GetParameter        │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
-│   │                                                                            │        │ ssm:GetParameters       │                                                                            │           │
-│   │                                                                            │        │ ssm:GetParametersByPath │                                                                            │           │
-├───┼────────────────────────────────────────────────────────────────────────────┼────────┼─────────────────────────┼────────────────────────────────────────────────────────────────────────────┼───────────┤
-│ + │ arn:aws:ssm:*:***:parameter/Inbox*                                │ Allow  │ ssm:*                   │ AWS:\${Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa} │           │
-└───┴────────────────────────────────────────────────────────────────────────────┴────────┴─────────────────────────┴────────────────────────────────────────────────────────────────────────────┴───────────┘
-(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
-
-Resources
-[+] AWS::IAM::Role Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa inboxpermissionsdeveloperroleqaD6B4997D 
-[+] AWS::IAM::Policy Qa-Permissions/InboxPermissions/inbox-permissions-developer-role-qa/DefaultPolicy inboxpermissionsdeveloperroleqaDefaultPolicy7153A66A 
-
-
-"
-`;
+exports[`getParsedStacks should remove all non-sense changes from a infra diff log 1`] = `""`;
 
 exports[`getParsedStacks should remove all non-sense changes from a service instance diff log 1`] = `""`;

@@ -29,6 +29,40 @@ function cleanCdkDiffLog(cdkLog: string) {
   return cleanLog;
 }
 
+function removeAllNonSenseTagVersionUpdates(stackDiff: string) {
+  const tagsBlockMatches = [...stackDiff.matchAll(/(?:.*\n)?\s*└─ \[~] Tags\n(?:.*\n)*?\[/g)];
+  if (!tagsBlockMatches) return stackDiff;
+
+  let atLeastOneTagChange = false;
+
+  for (const blockMatch of tagsBlockMatches) {
+    if (!hasRealTagChanges(blockMatch[0])) {
+      stackDiff = stackDiff.replace(blockMatch[0], '');
+    } else {
+      atLeastOneTagChange = true;
+    }
+  }
+
+  return atLeastOneTagChange ? stackDiff : '';
+}
+
+function hasRealTagChanges(tagBlock: string) {
+  const tags = tagBlock.split('},');
+  for (const tag of tags) {
+    const key = tag.match(/"Key": "(.*)",/)?.[1] ?? '';
+    const values = ([...tag.matchAll(/"Value": "(.*)"/g)].map((match) => match[0]) ?? []).slice(0, 2);
+
+    if (key === '' || values.length === 0) {
+      continue;
+    }
+    if (key.startsWith('version-') && values.length > 1) {
+      continue;
+    }
+    return true;
+  }
+  return false;
+}
+
 function cleanCDKDiffForSingleStack(stackDiff: string) {
   let cleanDiff = stackDiff;
   for (const [regex, replacer] of STACK_REMOVAL_REGEX) {
@@ -46,7 +80,8 @@ function rebuildDiffsIntoCdkLog(stacks: string[]) {
   for (const stack of stacks) {
     const stackName = stack.match(new RegExp('(^Stack .*)', 'gm'))?.[0] ?? '';
     const stackDetails = stack.replace(new RegExp('(^Stack .*)\n', 'gm'), '');
-    const cleanStackDetails = cleanCDKDiffForSingleStack(stackDetails);
+    const stackWithoutVersionUpdates = removeAllNonSenseTagVersionUpdates(stackDetails);
+    const cleanStackDetails = cleanCDKDiffForSingleStack(stackWithoutVersionUpdates);
 
     if (!cleanStackDetails.includes('There were no differences')) {
       cdkLogParts.push(stackName);
