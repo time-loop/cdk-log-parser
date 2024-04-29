@@ -20,6 +20,9 @@ const STACK_REMOVAL_REGEX: [RegExp, string][] = [
     '',
   ],
 ];
+const STACK_TAGS_REMOVAL_REGEX: [RegExp, string][] = [
+  [new RegExp('.*\\[~] Tags([\\s\\S]*?)(?=\\[~] AWS|\n\n)', 'gm'), ' └─ [~] Tags ...truncated\n'],
+];
 
 function cleanCdkDiffLog(cdkLog: string) {
   let cleanLog = cdkLog;
@@ -49,8 +52,13 @@ function rebuildDiffsIntoCdkLog(stacks: string[]) {
     const cleanStackDetails = cleanCDKDiffForSingleStack(stackDetails);
 
     if (!cleanStackDetails.includes('There were no differences')) {
+      const cleanStackVersionTags = cleanCDKTagsDiffForSingleStack(cleanStackDetails);
       cdkLogParts.push(stackName);
-      cdkLogParts.push(`${cleanStackDetails}\n`);
+      if (!cleanStackVersionTags.includes('There were no tags differences')) {
+        cdkLogParts.push(`${cleanStackVersionTags}Review cdk-diff job logs for full tags diff output !!!\n`);
+      } else {
+        cdkLogParts.push(`${cleanStackDetails}\n`);
+      }
     }
   }
   return cdkLogParts.join('\n');
@@ -60,6 +68,17 @@ function separateDiffLogIntoStacks(log: string) {
   const stacks = log.split(new RegExp('(^Stack )', 'gm'));
   if (stacks[0] === '' || !stacks[0].startsWith('Stack')) stacks.shift();
   return stacks.map((_, i) => (i % 2 === 0 ? '' : stacks[i - 1] + stacks[i])).filter((e) => e);
+}
+
+function cleanCDKTagsDiffForSingleStack(log: string) {
+  if (!log.match(new RegExp('.*\\[~] Tags([\\s\\S]*?)(?=\\[~] AWS|\n\n)', 'gm'))) {
+    return 'There were no tags differences';
+  }
+  let cleanDiff = log;
+  for (const [regex, replacer] of STACK_TAGS_REMOVAL_REGEX) {
+    cleanDiff = cleanDiff.replace(regex, replacer);
+  }
+  return cleanDiff;
 }
 
 export function loadCdkDiffLog(filePath: string) {
