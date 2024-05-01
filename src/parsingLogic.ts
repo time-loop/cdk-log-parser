@@ -22,6 +22,15 @@ const STACK_REMOVAL_REGEX: [RegExp, string][] = [
 ];
 const STACK_TAGS_REMOVAL_REGEX: [RegExp, string][] = [
   [new RegExp('.*\\[~] Tags([\\s\\S]*?)(?=\\[~] AWS|\n\n)', 'gm'), ' └─ [~] Tags ...truncated\n'],
+  [
+    new RegExp('(?!.*\\[ ].*"Name": "DD_TAGS",).*\\[-\\].*"Value".*\n.*\\[\\+\\].*"Value".*', 'gm'),
+    ' │      [~]     "Value": ...truncated',
+  ],
+  [new RegExp('.*\\[-\\].*"dd_tags".*\n.*\\[\\+\\].*"dd_tags".*', 'gm'), ' │      [~]     "dd_tags": ...truncated'],
+  [
+    new RegExp('.*\\[-\\].*"com.datadoghq.ad.tags".*\n.*\\[\\+\\].*"com.datadoghq.ad.tags".*', 'gm'),
+    ' │      [~]   "com.datadoghq.ad.tags": ...truncated',
+  ],
 ];
 
 function cleanCdkDiffLog(cdkLog: string) {
