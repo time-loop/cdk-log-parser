@@ -1,9 +1,12 @@
 import { clickupTs } from '@time-loop/clickup-projen';
+import { javascript } from 'projen';
 
 const project = new clickupTs.ClickUpTypeScriptProject({
   name: '@time-loop/cdk-log-parser',
   defaultReleaseBranch: 'main',
   licensed: true,
+  packageManager: javascript.NodePackageManager.PNPM,
+  pnpmVersion: '9',
 
   deps: ['aws-cdk-lib', 'aws-sdk'],
   devDeps: ['ts-node'],

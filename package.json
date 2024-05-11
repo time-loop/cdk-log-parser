@@ -45,7 +45,7 @@
     "jest-junit": "^15",
     "jsii-release": "^0.2.813",
     "prettier": "^3.2.5",
-    "projen": "^0.80.20",
+    "projen": "^0.81.10",
     "standard-version": "^9",
     "ts-jest": "^29.1.2",
     "ts-node": "^10",
@@ -54,10 +54,11 @@
     "typescript": "^5.4.4"
   },
   "dependencies": {
-    "@time-loop/clickup-projen": "^1.7.2",
+    "@time-loop/clickup-projen": "^1.10.2",
     "aws-cdk-lib": "^2.135.0",
     "aws-sdk": "^2.1593.0"
   },
+  "pnpm": {},
   "engines": {
     "node": ">= 18.17.1"
   },

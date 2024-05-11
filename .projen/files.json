@@ -15,6 +15,7 @@
     ".gitignore",
     ".mergify.yml",
     ".npmignore",
+    ".npmrc",
     ".nvmrc",
     ".prettierignore",
     ".prettierrc.json",
