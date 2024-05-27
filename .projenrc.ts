@@ -8,9 +8,6 @@ const project = new clickupTs.ClickUpTypeScriptProject({
   packageManager: javascript.NodePackageManager.PNPM,
   pnpmVersion: '9',
 
-  deps: ['aws-cdk-lib', 'aws-sdk'],
-  devDeps: ['ts-node'],
-
   projenrcTs: true,
   bin: {
     'cdk-log-parser': 'src/cdkLogParser.ts',
