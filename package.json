@@ -113,7 +113,7 @@
     }
   },
   "types": "lib/index.d.ts",
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@9.1.2",
   "files": [
     "/bin",
     "/lib",
