@@ -6,6 +6,9 @@ on:
     branches:
       - main
   workflow_dispatch: {}
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -42,7 +45,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.11.1
+          node-version: 22.14.0
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: release
@@ -69,7 +72,7 @@ jobs:
         continue-on-error: true
       - name: Upload artifact
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: build-artifact
           path: dist
@@ -86,7 +89,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.11.1
+          node-version: 22.14.0
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -112,7 +115,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.11.1
+          node-version: 22.14.0
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
