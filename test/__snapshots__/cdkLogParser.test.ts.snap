@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`getParsedStacks should NOT remove SSM diffs if the SSM name/path changes 1`] = `
 "Stack ClickupEcsGlobalIntervalPipeline/EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance/Instance (EcsGlobalStagingStagingUsEast21GlobalIntervalAutomationInstance-Instance)
