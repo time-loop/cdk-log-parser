@@ -52,6 +52,12 @@
         "Applying major version updates without understanding what they do has caused outages at ClickUp. Don't be that guy. Read the release notes. The release notes are in a link buried in the rollup below. Sorry, unfortunately Renovate does not offer a reasonable way to expose them here. If in doubt, escalate to CloudPlatform.",
         "CloudPlatform thanks you for being diligent with your library updates!"
       ]
+    },
+    {
+      "matchPackageNames": [
+        "@time-loop/{/,}**"
+      ],
+      "minimumReleaseAge": "0 days"
     }
   ],
   "ignoreDeps": [
@@ -66,11 +72,22 @@
     "node",
     "@time-loop/clickup-projen",
     "pnpm",
-    "projen"
+    "projen",
+    "hmarr/auto-approve-action",
+    "actions/checkout",
+    "actions/download-artifact",
+    "amannn/action-semantic-pull-request",
+    "pnpm/action-setup",
+    "actions/setup-node",
+    "codecov/codecov-action",
+    "actions/upload-artifact",
+    "rtCamp/action-slack-notify",
+    "peter-evans/create-pull-request"
   ],
   "rangeStrategy": "bump",
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
   "automergeType": "pr",
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "minimumReleaseAge": "7 days"
 }
