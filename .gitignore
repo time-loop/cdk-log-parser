@@ -43,6 +43,8 @@ junit.xml
 /dist/changelog.md
 /dist/version.txt
 !/.github/workflows/release.yml
+codecov
+codecov.*
 !/.mergify.yml
 !/.github/pull_request_template.md
 !/.prettierignore
@@ -55,7 +57,6 @@ junit.xml
 /lib
 /dist/
 !/.eslintrc.json
-!/codecov.yml
 !/.nvmrc
 !/.github/workflows/renovate.yml
 !/.github/workflows/add-to-project.yml
